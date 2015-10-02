@@ -1,0 +1,6 @@
+<%= markdown(@story.post) %>
+
+<ul class="button-group round">
+	<li><%= link_to '&larr; Back'.html_safe, stories_path, :class => "button tiny info" %></li>
+	<li><%= link_to 'Edit', edit_story_path(@story), :class => "button tiny" %></li>
+</ul>

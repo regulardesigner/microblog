@@ -1,0 +1,19 @@
+<% title = "hello world" %>
+<h1>Listing stories</h1>
+
+<% @stories.each do |story| %>
+  <div class="story-<%= story.id%>">
+    <span class="secondary round label">
+      <%= story.created_at.strftime("Story of %m/%d/%Y at %I:%M%p") %>
+    </span>
+    <%= markdown(story.post) %>
+    <ul class="button-group round">
+      <li><%= link_to 'Show', story, :class => "button tiny"  %></li>
+      <li><%= link_to 'Edit', edit_story_path(story), :class => "button tiny"  %></li>
+      <li><%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button tiny alert"  %></li>
+    </ul>
+  </div>
+  <% if story != @stories.last %>
+    <hr class="split">
+  <% end %>
+<% end %>

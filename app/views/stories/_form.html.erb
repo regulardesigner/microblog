@@ -1,0 +1,37 @@
+<%= form_for(@story) do |f| %>
+  <% if @story.errors.any? %>
+    <div data-alert class="alert-box alert">
+      <div><%= pluralize(@story.errors.count, "error") %> prohibited this story from being saved:
+        <ul>
+        <% @story.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+      <a href="#" class="close">&times;</a>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Write your story here" %>
+    <ul class="button-group round">
+      <li><a class="button tiny" onClick="insertThisInThere('**type your text here**','story_post');"><strong>Bold</strong></a></li>
+      <li><a class="button tiny" onClick="insertThisInThere('*type your text here*','story_post');"><em>Italic</em></a></li>
+      <li><a class="button tiny" onClick="insertThisInThere('> ','story_post');"><strong>Quote</strong></a></li>
+      <li><button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" class="button tiny dropdown"><strong>Header</strong></button><br>
+        <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">
+          <li><a onClick="insertThisInThere('## ','story_post');"><strong>H2</strong></a></li>
+          <li><a onClick="insertThisInThere('### ','story_post');"><strong>H3</strong></a></li>
+          <li><a onClick="insertThisInThere('#### ','story_post');"><strong>H4</strong></a></li>
+          <li><a onClick="insertThisInThere('##### ','story_post');"><strong>H5</strong></a></li>
+          <li><a onClick="insertThisInThere('###### ','story_post');"><strong>H6</strong></a></li>
+        </ul></li>
+      <li><a class="button tiny" onClick="insertThisInThere('![Alt text](http://url_of_your_img_here.jpg)','story_post');"><strong>img</strong></a></li>
+    </ul>
+    <%= f.text_area :post, :rows => "25" %>
+  </div>
+  <div class="actions">
+    <%= f.select "status", "<option>Draft</option><option>Publish</option>".html_safe %>
+    <%= f.submit "Create my new story", :class => "button" %>
+  </div>
+<% end %>
