@@ -8,7 +8,7 @@ class StoriesController < ApplicationController
   end
 
   def draft
-    @stories = Story.where(status: "Draft").order('updated_at ASC')
+    @stories = Story.where(status: "Draft").order('updated_at DESC')
   end
 
   # GET /stories/1
