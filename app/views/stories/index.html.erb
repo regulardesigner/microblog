@@ -8,8 +8,10 @@
     <%= markdown(story.post) %>
     <ul class="button-group round">
       <li><%= link_to 'Show', story, :class => "button tiny"  %></li>
+      <% if admin_signed_in? %>
       <li><%= link_to 'Edit', edit_story_path(story), :class => "button tiny"  %></li>
       <li><%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button tiny alert"  %></li>
+      <% end %>
     </ul>
   </div>
   <% if story != @stories.last %>
