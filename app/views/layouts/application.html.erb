@@ -24,9 +24,13 @@
         <section class="top-bar-section">
         <!-- Right Nav Section -->
           <ul class="right">
-            <li class="active"><%= link_to '&#10081; Log-in'.html_safe, new_story_path %></li>
-            <li><%= link_to '&#9998; Create a new story'.html_safe, new_story_path %></li>
+            <% if admin_signed_in? %>
             <li><%= link_to draftCounter, draft_path, :class => "button radius alert" %></li>
+            <li><%= link_to '&#9998; Create a new story'.html_safe, new_story_path %></li>
+            <li class="active"><%= link_to '&#10081; Log-out'.html_safe, destroy_admin_session_path, :method => :delete %></li>
+            <% else %>
+            <li class="active"><%= link_to '&#10081; Log-in'.html_safe, new_admin_session_path %></li>
+            <% end %>
           </ul>
         </section>
       </nav>
