@@ -17,8 +17,11 @@ gem 'coffee-rails', '~> 4.0.0'
 # foundation
 gem 'foundation-rails', '~> 5.4.4'
 
-#Markdown width Redcarpet from github !
+# Markdown width Redcarpet from github !
 gem 'redcarpet'
+
+# devise gem for user authentification
+gem 'devise', '~> 3.5.2'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
