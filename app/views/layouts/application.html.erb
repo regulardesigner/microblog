@@ -4,7 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Regulardesigner - le blog" %></title>
+
+    <meta name="description" content="<%= content_for?(:meta_desc) ? yield(:meta_desc) : "Bienvenue sur le blog de Regulardesigner." %>" />
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -23,7 +25,8 @@
         <!-- Right Nav Section -->
           <ul class="right">
             <li class="active"><%= link_to '&#10081; Log-in'.html_safe, new_story_path %></li>
-            <li><%= link_to '&#9998; Add a new story'.html_safe, new_story_path %></li>
+            <li><%= link_to '&#9998; Create a new story'.html_safe, new_story_path %></li>
+            <li><%= link_to draftCounter, draft_path, :class => "button radius alert" %></li>
           </ul>
         </section>
       </nav>

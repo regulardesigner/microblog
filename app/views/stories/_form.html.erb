@@ -11,9 +11,7 @@
       <a href="#" class="close">&times;</a>
     </div>
   <% end %>
-
   <div class="field">
-    <%= f.label "Write your story here" %>
     <ul class="button-group round">
       <li><a class="button tiny" onClick="insertThisInThere('**type your text here**','story_post');"><strong>Bold</strong></a></li>
       <li><a class="button tiny" onClick="insertThisInThere('*type your text here*','story_post');"><em>Italic</em></a></li>
@@ -28,7 +26,7 @@
         </ul></li>
       <li><a class="button tiny" onClick="insertThisInThere('![Alt text](http://url_of_your_img_here.jpg)','story_post');"><strong>img</strong></a></li>
     </ul>
-    <%= f.text_area :post, :rows => "25" %>
+    <%= f.text_area :post, :rows => "25", autofocus: true, :placeholder => "Write your story here" %>
   </div>
   <div class="actions">
     <%= f.select "status", "<option>Draft</option><option>Publish</option>".html_safe %>
