@@ -7,6 +7,8 @@
     <title><%= content_for?(:title) ? yield(:title) : "Regulardesigner - le blog" %></title>
 
     <meta name="description" content="<%= content_for?(:meta_desc) ? yield(:meta_desc) : "Bienvenue sur le blog de Regulardesigner." %>" />
+	
+	<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400italic' rel='stylesheet' type='text/css'>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
