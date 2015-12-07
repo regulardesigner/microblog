@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :admins
+  devise_for :admins, :skip => :registrations
   resources :stories
+  
+  # create a user with the rails console
+  # Admin.create!({:email => "your@email.com", :password => "yoursupersecretpassword", :password_confirmation => "yoursupersecretpassword" })
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
