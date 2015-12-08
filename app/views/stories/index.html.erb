@@ -5,7 +5,7 @@
     <span class="secondary round label">
       <%= story.created_at.strftime("Story of %m/%d/%Y at %I:%M%p") %>
     </span>
-    <%= markdown(story.post) %>
+    <%= markdown(story.post.lines.first) %>
     <ul class="button-group round">
       <li><%= link_to 'Show', story, :class => "button tiny"  %></li>
       <% if admin_signed_in? %>
