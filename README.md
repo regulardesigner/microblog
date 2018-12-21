@@ -5,7 +5,7 @@
 git clone https://github.com/regulardesigner/microblog.git
 ```
 
-Then you can intialise your rails project.
+Then you can intialize your rails project.
 ```sh
 bundle install
 
@@ -18,4 +18,4 @@ $ MyAdminAccount = Admin.create(:email => "youremailaddress@gmail.com", :passwor
 $ MyAdminAccount.save
 ```
 
-That's it!
+That's it! It's so damned simple!
