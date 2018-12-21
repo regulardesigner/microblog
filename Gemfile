@@ -15,7 +15,8 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer',  platforms: :ruby
 
 # foundation
-gem 'foundation-rails', '~> 5.4.4'
+gem 'foundation-rails'
+gem 'autoprefixer-rails'
 
 # Markdown width Redcarpet from github !
 gem 'redcarpet'
